@@ -6,6 +6,7 @@ do
   ln -s $HOME/dotfiles/$F $HOME/$F || true
 done
 
+rm -r $HOME/.vim || true
 mkdir $HOME/.vim || true
 
 for F in `ls -A dotfiles/.vim`
