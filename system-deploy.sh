@@ -8,6 +8,8 @@ do
   ln -s $HOME/dotfiles/$F $HOME/$F
 done
 
+# .vim used to be a link, so attempt to delete it as a link just in case
+rm $HOME/.vim || true
 mkdir $HOME/.vim > /dev/null 2>&1 || true
 
 for F in `ls -A dotfiles/.vim`
