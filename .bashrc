@@ -73,9 +73,11 @@ esac
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
+for F in .bash_aliases .aliases .bash_profile .bash_prompt .functions
+do
+    if [ -f $HOME/$F ]; then
+        . $HOME/$F
+    fi
+done
 # mint-fortune
-/usr/bin/mint-fortune
+#/usr/bin/mint-fortune

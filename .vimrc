@@ -1,9 +1,23 @@
 autocmd! bufwritepost $MYVIMRC source %
+
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'flazz/vim-colorschemes'
+
+call vundle#end()
+filetype plugin indent on
+
 set nobackup
 set nowritebackup
 set noswapfile
-
-set nocompatible
 
 set pastetoggle=<F2>
 set clipboard=unnamedplus
@@ -105,10 +119,6 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
-  
-call plug#begin()
-Plug 'tpope/vim-ragtag'
-call plug#end()
 
 set background=dark
 let g:solarized_termcolors=256
