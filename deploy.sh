@@ -4,17 +4,17 @@ command -v curl >/dev/null 2>&1 || { echo >&2 "Please install curl"; exit 1; }
 cd
 for F in `ls -A --ignore=[^.]* --ignore=.git --ignore=.vim dotfiles`
 do
-  rm -r $HOME/$F || true
+  rm -r $HOME/$F > /dev/null 2>&1 || true
   ln -s $HOME/dotfiles/$F $HOME/$F
 done
 
 # .vim used to be a link, so attempt to delete it as a link just in case
-rm $HOME/.vim || true
+rm $HOME/.vim > /dev/null 2>&1 || true
 mkdir $HOME/.vim > /dev/null 2>&1 || true
 
 for F in `ls -A dotfiles/.vim`
 do
-  rm -r $HOME/.vim/$F || true
+  rm -r $HOME/.vim/$F > /dev/null 2>&1 || true
   ln -s $HOME/dotfiles/.vim/$F $HOME/.vim/$F
 done
 
