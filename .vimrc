@@ -1,4 +1,4 @@
-autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost $MYVIMRC source %
 set nobackup
 set nowritebackup
 set noswapfile
@@ -114,11 +114,29 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
-function! MakeSession()
+function! Stinted()
+  if (!filereadable(getcwd() . '/.stint'))
+      return 0
+  endif
+  if (filereadable(getcwd() . '/.stintignore'))
+      for f in readfile(getcwd() . '/.stintignore')
+        if (expand('%:t') == f)
+          return 0
+        endif
+      endfor
+  endif
   if (&ft == 'gitcommit')
-    return
+    return 0
   endif
   if (expand('%:t') == '.vimrc')
+    return 0
+  endif
+  " is this file under the stinted directory?
+  return matchstr(expand('%:p'), getcwd()) == getcwd()
+endfunction
+
+function! MakeSession()
+  if (!Stinted())
     return
   endif
   let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
@@ -131,10 +149,7 @@ function! MakeSession()
 endfunction
 
 function! LoadSession()
-  if (&ft == 'gitcommit')
-    return
-  endif
-  if (expand('%:t') == '.vimrc')
+  if (!Stinted())
     return
   endif
   let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
@@ -149,3 +164,16 @@ endfunction
 " Adding automatons for when entering or leaving Vim
 au VimEnter * nested :call LoadSession()
 au VimLeave * :call MakeSession()
+
+" edit and source vimrc
+:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+:nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Surround with quotes
+:nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+:nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+
+:nnoremap H ^
+:nnoremap L $
+:inoremap jk <esc>
+:inoremap <esc> <nop>
