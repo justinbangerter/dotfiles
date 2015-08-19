@@ -9,6 +9,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'flazz/vim-colorschemes'
 
@@ -187,3 +189,22 @@ au VimLeave * :call MakeSession()
 :nnoremap L $
 :inoremap jk <esc>
 :inoremap <esc> <nop>
+
+" Open NerdTree automatically when vim starts up without any file spec
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+map <C-n> :NERDTreeToggle<CR>
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" New buffer
+:nnoremap <leader>T :enew<CR>
+:nnoremap <leader>l :bnext<CR>
+:nnoremap <leader>h :bprevious<CR>
+" Close current buffer and move the previous
+:nnoremap <leader>bq :bp <BAR> bd #<CR>
+" Show all open buffers and statuses
+:nnoremap <leader>bl :ls<CR>
