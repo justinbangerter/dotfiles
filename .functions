@@ -1,3 +1,19 @@
+# Git Sync Status
+function gss() {
+  LOCAL=$(git rev-parse @)
+  REMOTE=$(git rev-parse @{u})
+  BASE=$(git merge-base @ @{u})
+
+  if [ $LOCAL = $REMOTE ]; then
+    echo "current"
+  elif [ $LOCAL = $BASE ]; then
+    echo "behind"
+  elif [ $REMOTE = $BASE ]; then
+    echo "ahead"
+  else
+    echo "diverged"
+  fi
+}
 function gitup() {
   git push origin
 }
