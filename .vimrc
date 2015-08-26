@@ -1,9 +1,7 @@
 autocmd! bufwritepost $MYVIMRC source %
 
-
 set nocompatible
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -13,6 +11,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'flazz/vim-colorschemes'
+
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'sirver/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on
@@ -39,13 +41,11 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
+" Window navigation
+map <c-y> <c-w>h
+map <c-u> <c-w>j
+map <c-i> <c-w>k
+map <c-o> <c-w>l
 
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
@@ -195,16 +195,24 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-map <C-n> :NERDTreeToggle<CR>
+:nnoremap <C-n> :NERDTreeToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " New buffer
 :nnoremap <leader>T :enew<CR>
-:nnoremap <leader>l :bnext<CR>
 :nnoremap <leader>h :bprevious<CR>
+:nnoremap <leader>l :bnext<CR>
 " Close current buffer and move the previous
-:nnoremap <leader>bq :bp <BAR> bd #<CR>
-" Show all open buffers and statuses
-:nnoremap <leader>bl :ls<CR>
+:nnoremap <leader>q :bp <BAR> bd #<CR>
+
+let g:UltiSnipsExpandTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+
+let g:neocomplete#enable_at_startup = 1
+:inoremap <expr><c-g> neocomplete#undo_completion()
+:inoremap <expr><c-h> neocomplete#smart_close_popup()."\<c-g>"
+:inoremap <expr><c-l> neocomplete#complete_common_string()
+:inoremap <expr><c-j> pumvisible() ? "\<C-n>" : "\<c-j>"
