@@ -16,6 +16,8 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 
+Plugin 'kien/ctrlp.vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -194,6 +196,7 @@ au VimLeave * :call MakeSession()
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore = ['\.pyc$']
 
 :nnoremap <C-n> :NERDTreeToggle<CR>
 
