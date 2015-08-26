@@ -79,5 +79,9 @@ do
         . $HOME/$F
     fi
 done
+
+if [ -f $HOME/.Xmodmap ]; then
+    xmodmap $HOME/.Xmodmap
+fi
 # mint-fortune
 #/usr/bin/mint-fortune
