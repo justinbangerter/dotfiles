@@ -18,6 +18,8 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'kien/ctrlp.vim'
 
+Plugin 'davidhalter/jedi-vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -223,3 +225,13 @@ function! s:my_cr_function()
     " For no inserting <CR> key.
     "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
+
+" go to definition and other goodies for python
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
