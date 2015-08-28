@@ -20,6 +20,8 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'davidhalter/jedi-vim'
 
+Plugin 'scrooloose/syntastic'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -44,6 +46,7 @@ set noeol
 if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
+set colorcolumn=80
 
 " Window navigation
 map <c-y> <c-w>h
