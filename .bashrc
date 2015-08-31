@@ -80,6 +80,8 @@ do
     fi
 done
 
+command -v xmodmap >/dev/null 2>&1 || exit 1;
+
 if [ -f $HOME/.Xmodmap ]; then
     xmodmap $HOME/.Xmodmap
 fi
