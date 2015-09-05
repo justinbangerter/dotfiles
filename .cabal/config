@@ -84,3 +84,5 @@ install-dirs global
   -- docdir: $datadir/doc/$pkgid
   -- htmldir: $docdir/html
   -- haddockdir: $htmldir
+
+require-sandbox: True
