@@ -2,7 +2,7 @@
 command -v git >/dev/null 2>&1 || { echo >&2 "Please install git."; exit 1; }
 command -v curl >/dev/null 2>&1 || { echo >&2 "Please install curl"; exit 1; }
 cd
-for F in `ls -A --ignore=[^.]* --ignore=.git --ignore=.vim dotfiles`
+for F in `ls -A --ignore=[^.]* --ignore=.git --ignore=.vim --ignore=.cabal dotfiles`
 do
   rm -r $HOME/$F > /dev/null 2>&1 || true
   ln -s $HOME/dotfiles/$F $HOME/$F
