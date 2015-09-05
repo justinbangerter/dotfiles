@@ -8,11 +8,8 @@ do
   ln -s $HOME/dotfiles/$F $HOME/$F
 done
 
-# .vim used to be a link, so attempt to delete it as a link just in case
-rm $HOME/.vim > /dev/null 2>&1 || true
 mkdir $HOME/.vim > /dev/null 2>&1 || true
-
-for F in `ls -A dotfiles/.vim`
+for F in `ls -A $HOME/dotfiles/.vim`
 do
   rm -r $HOME/.vim/$F > /dev/null 2>&1 || true
   ln -s $HOME/dotfiles/.vim/$F $HOME/.vim/$F
@@ -22,6 +19,13 @@ mkdir $HOME/.vim/bundle > /dev/null 2>&1 || true
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 fi
+
+mkdir $HOME/.cabal > /dev/null 2>&1 || true
+for F in `ls -A $HOME/dotfiles/.cabal`
+do
+  rm -r $HOME/.cabal/$F > /dev/null 2>&1 || true
+  ln -s $HOME/dotfiles/.cabal/$F $HOME/.cabal/$F
+done
 
 xmodmap $HOME/.Xmodmap
 
