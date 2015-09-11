@@ -97,7 +97,7 @@ variable-rgx=[a-z_][a-z0-9_]{2,30}$
 class-attribute-rgx=([A-Za-z_][A-Za-z0-9_]{2,30}|(__.*__))$
 inlinevar-rgx=[A-Za-z_][A-Za-z0-9_]*$
 
-good-names=i,j,k,x,y,z,l,m,n,u,v,w,ex,Run,_
+good-names=i,j,k,x,y,z,l,m,n,u,v,w,ex,Run,_,e
 bad-names=foo,bar,baz,toto,tutu,tata
 no-docstring-rgx=__.*__
 
