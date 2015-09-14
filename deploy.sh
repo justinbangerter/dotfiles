@@ -27,8 +27,6 @@ do
   ln -s $HOME/dotfiles/.cabal/$F $HOME/.cabal/$F
 done
 
-xmodmap $HOME/.Xmodmap
-
 vim +PluginInstall +qall
 
 echo "updated dotfiles"
