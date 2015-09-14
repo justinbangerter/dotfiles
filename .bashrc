@@ -80,8 +80,6 @@ do
     fi
 done
 
-command -v xmodmap >/dev/null 2>&1 && {
-    [ -f $HOME/.Xmodmap ] && xmodmap $HOME/.Xmodmap
-}
+command -v ssh-add >/dev/null 2>&1 && ssh-add -l >/dev/null || echo "No Agent Identities"
 # mint-fortune
 #/usr/bin/mint-fortune
