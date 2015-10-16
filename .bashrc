@@ -7,6 +7,11 @@ if [ -f /etc/bash.bashrc ]; then
         . /etc/bash.bashrc
 fi
 
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
+export PATH="$HOME/.cabal/bin:$PATH";
+export PATH=".cabal-sandbox/bin:$PATH";
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
