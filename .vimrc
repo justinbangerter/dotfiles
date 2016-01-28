@@ -22,6 +22,8 @@ Plugin 'davidhalter/jedi-vim'
 
 Plugin 'scrooloose/syntastic'
 
+Plugin 'pangloss/vim-javascript'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -200,6 +202,8 @@ au VimLeave * :call MakeSession()
 :nnoremap L $
 :inoremap jk <esc>
 :inoremap <esc> <nop>
+
+let g:syntastic_check_on_open = 1
 
 " Nerd Tree file filters
 let NERDTreeIgnore = ['\.pyc$']
