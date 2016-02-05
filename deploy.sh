@@ -27,13 +27,6 @@ do
   ln -s $HOME/dotfiles/.cabal/$F $HOME/.cabal/$F
 done
 
-mkdir $HOME/.i3 > /dev/null 2>&1 || true
-for F in `ls -A $HOME/dotfiles/.i3`
-do
-  rm -r $HOME/.i3/$F > /dev/null 2>&1 || true
-  ln -s $HOME/dotfiles/.i3/$F $HOME/.i3/$F
-done
-
 vim +PluginInstall +qall
 
 echo "updated dotfiles"
