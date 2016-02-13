@@ -1,0 +1,82 @@
+xterm*font: -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
+xterm*font1: -*-*-*-*-*-*-2-*-*-*-*-*-*-*
+xterm*font2: -misc-fixed-*-r-normal-*-8-*-*-*-*-*-iso8859-*
+xterm*font3: -b&h-lucidatypewriter-bold-*-*-*-12-*-*-*-*-*-*-*
+xterm*font4: -*-screen-bold-r-normal-*-16-*-*-*-*-*-iso8859-*
+xterm*font5: -*-lucidatypewriter-medium-*-*-*-18-*-*-*-*-*-*-*
+xterm*font6: -*-lucidatypewriter-medium-*-*-*-20-*-*-*-*-*-*-*
+xterm*font7: -dec-terminal-bold-r-normal-*-14-*-*-*-*-*-iso8859-*
+
+xterm*loginShell: true
+xterm*vt100*geometry: 80x50
+xterm*saveLines: 3000
+xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+xterm*termName: xterm-color
+
+xterm*foreground: rgb:dd/dd/dd
+xterm*background: black
+xterm*transparent: true
+xterm*HiForeColor: white
+xterm*HiBackColor: #c06077
+xterm*pointerColor: red
+xterm*pointerColorBackground: black
+xterm*cursorColor: green
+xterm*internalBorder: 3
+xterm*scrollBar: false
+xterm*scrollKey: true
+xterm*multiClickTime: 250 
+
+xterm*color0: rgb:00/00/00
+xterm*color1: rgb:a8/00/00
+xterm*color2: rgb:00/a8/00
+xterm*color3: rgb:a8/54/00
+xterm*color4: rgb:00/00/a8
+xterm*color5: rgb:a8/00/a8
+xterm*color6: rgb:00/a8/a8
+xterm*color7: rgb:a8/a8/a8
+xterm*color8: rgb:54/54/54
+xterm*color9: rgb:fc/54/54
+xterm*color10: rgb:54/fc/54
+xterm*color11: rgb:fc/fc/54
+xterm*color12: rgb:54/54/fc
+xterm*color13: rgb:fc/54/fc
+xterm*color14: rgb:54/fc/fc
+xterm*color15: rgb:fc/fc/fc
+
+xterm*boldMode: false
+xterm*colorBDMode: true
+xterm*colorBD: rgb:fc/fc/fc
+
+//URxvt.depth: 32
+//URxvt.termName: rxvt-256color
+URxvt*.transparent: true
+URxvt*.shading: 15
+URxvt*loginShell: true
+URxvt.geometry: 80x50
+URxvt.saveLines: 10000
+URxvt.cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
+URxvt.foreground: rgb:a8/a8/a8
+URxvt.background: rgb:00/00/00
+URxvt.color0: rgb:00/00/00
+URxvt.color1: rgb:a8/00/00
+URxvt.color2: rgb:00/a8/00
+URxvt.color3: rgb:a8/54/00
+URxvt.color4: rgb:00/00/a8
+URxvt.color5: rgb:a8/00/a8
+URxvt.color6: rgb:00/a8/a8
+URxvt.color7: rgb:a8/a8/a8
+URxvt.color8: rgb:54/54/54
+URxvt.color9: rgb:fc/54/54
+URxvt.color10: rgb:54/fc/54
+URxvt.color11: rgb:fc/fc/54
+URxvt.color12: rgb:54/54/fc
+URxvt.color13: rgb:fc/54/fc
+URxvt.color14: rgb:54/fc/fc
+URxvt.color15: rgb:fc/fc/fc
+URxvt.colorBD: rgb:fc/fc/fc
+URxvt.font: -*-fixed-*-r-*-*-18-*-*-*-*-*-iso8859-*
+URxvt.scrollBar: false
+//URxvt.italicFont: terminus-12
+URxvt.visualBell: true
+
+
