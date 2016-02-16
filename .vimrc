@@ -13,8 +13,8 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'flazz/vim-colorschemes'
 
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'sirver/ultisnips'
-Plugin 'honza/vim-snippets'
+" Plugin 'sirver/ultisnips'
+" Plugin 'honza/vim-snippets'
 
 Plugin 'kien/ctrlp.vim'
 
