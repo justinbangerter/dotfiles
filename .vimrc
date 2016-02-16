@@ -220,9 +220,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Close current buffer and move the previous
 :nnoremap <leader>q :bp <BAR> bd #<CR>
 
-let g:UltiSnipsExpandTrigger="<TAB>"
-let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
-let g:UltiSnipsJumpForwardTrigger="<TAB>"
+" let g:UltiSnipsExpandTrigger="<TAB>"
+" let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+" let g:UltiSnipsJumpForwardTrigger="<TAB>"
 
 let g:neocomplete#enable_at_startup = 1
 :inoremap <expr><c-g> neocomplete#undo_completion()
