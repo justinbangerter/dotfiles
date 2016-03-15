@@ -239,9 +239,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " endfunction
 
 " go to definition and other goodies for python
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
+" autocmd FileType python setlocal omnifunc=jedi#completions
+" let g:jedi#completions_enabled = 0
+" let g:jedi#auto_vim_configuration = 0
 
 " if !exists('g:neocomplete#force_omni_input_patterns')
     " let g:neocomplete#force_omni_input_patterns = {}
