@@ -74,19 +74,17 @@ URxvt.color13: rgb:fc/54/fc
 URxvt.color14: rgb:54/fc/fc
 URxvt.color15: rgb:fc/fc/fc
 URxvt.colorBD: rgb:fc/fc/fc
-URxvt.font: -*-fixed-*-r-*-*-18-*-*-*-*-*-iso8859-*
 URxvt.scrollBar: false
 //URxvt.italicFont: terminus-12
 URxvt.visualBell: true
 
 
-XTerm*FaceName: small
 XTerm*Foreground: rgb:BB/BB/BB
 XTerm*Background: rgb:00/00/00
-UXTerm*FaceName: small
 UXTerm*Foreground: rgb:BB/BB/BB
 UXTerm*Background: rgb:00/00/00
 
 
 URxvt.font: -*-fixed-*-r-*-*-18-*-*-*-*-*-iso8859-*
 Rxvt.font: -*-fixed-*-r-*-*-18-*-*-*-*-*-iso8859-*
+XTerm*font: -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
