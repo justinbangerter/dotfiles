@@ -14,7 +14,7 @@ xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 xterm*termName: xterm-color
 
 xterm*foreground: rgb:dd/dd/dd
-xterm*background: black
+xterm*background: rgb:00/00/00
 xterm*transparent: true
 xterm*HiForeColor: white
 xterm*HiBackColor: #c06077
@@ -80,3 +80,13 @@ URxvt.scrollBar: false
 URxvt.visualBell: true
 
 
+XTerm*FaceName: small
+XTerm*Foreground: rgb:BB/BB/BB
+XTerm*Background: rgb:00/00/00
+UXTerm*FaceName: small
+UXTerm*Foreground: rgb:BB/BB/BB
+UXTerm*Background: rgb:00/00/00
+
+
+URxvt.font: -*-fixed-*-r-*-*-18-*-*-*-*-*-iso8859-*
+Rxvt.font: -*-fixed-*-r-*-*-18-*-*-*-*-*-iso8859-*
