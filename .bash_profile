@@ -12,21 +12,12 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-# Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
-
-# Append to the Bash history file, rather than overwriting it
 shopt -s histappend;
-
-# Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
-# Enable some Bash 4 features when possible:
-# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
-# * Recursive globbing, e.g. `echo **/*.txt`
-for option in autocd globstar; do
-	shopt -s "$option" 2> /dev/null;
-done;
+# Enable some Bash 4 features when possible, autocd + recursive glob
+for option in autocd globstar; do shopt -s "$option" 2> /dev/null; done;
 
 # Add tab completion for many Bash commands
 if which brew > /dev/null 2>&1 && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
@@ -38,8 +29,13 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh;
 
-#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if ! pgrep -u $USER ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-env;
+fi
+eval $(<~/.ssh-agent-env) > /dev/null
+export SSH_ASKPASS=ssh-askpass
 
-
+if [ -r ~/.profile ]; then . ~/.profile; fi
+case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac

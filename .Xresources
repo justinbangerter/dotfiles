@@ -85,6 +85,6 @@ UXTerm*Foreground: rgb:BB/BB/BB
 UXTerm*Background: rgb:00/00/00
 
 
-URxvt.font: -*-fixed-*-r-*-*-18-*-*-*-*-*-iso8859-*
-Rxvt.font: -*-fixed-*-r-*-*-18-*-*-*-*-*-iso8859-*
-XTerm*font: -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
+URxvt.font: -*-fixed-*-*-*-*-18-*-*-*-*-*-iso8859-*
+Rxvt.font: -*-fixed-*-*-*-*-18-*-*-*-*-*-iso8859-*
+XTerm*font: -*-fixed-*-*-*-*-18-*-*-*-*-*-iso8859-*
