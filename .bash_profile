@@ -1,7 +1,7 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
-export PATH="$HOME/.cabal/bin:$PATH";
-export PATH=".cabal-sandbox/bin:$PATH";
+# export PATH="$HOME/.cabal/bin:$PATH";
+# export PATH=".cabal-sandbox/bin:$PATH";
 export PYLINTRC="$HOME/.pylintrc"
 
 # Load the shell dotfiles, and then some:
@@ -31,8 +31,10 @@ fi;
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-if ! pgrep -u $USER ssh-agent > /dev/null; then
+if command -v ssh-agent >/dev/null 2>&1; then
+  if ! pgrep -u $USER ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-env;
+  fi
 fi
 eval $(<~/.ssh-agent-env) > /dev/null
 export SSH_ASKPASS=ssh-askpass

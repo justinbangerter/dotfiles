@@ -17,12 +17,22 @@ Plugin 'flazz/vim-colorschemes'
 " Plugin 'honza/vim-snippets'
 
 Plugin 'kien/ctrlp.vim'
+Plugin 'sophacles/vim-bundle-mako'
+Plugin 'othree/html5.vim'
+" Plugin 'othree/html5-syntax.vim'
 
-Plugin 'davidhalter/jedi-vim'
+Plugin 'sheerun/vim-polyglot'
+
+" Plugin 'davidhalter/jedi-vim'
 
 Plugin 'scrooloose/syntastic'
 
 Plugin 'pangloss/vim-javascript'
+Plugin 'adelarsq/vim-matchit'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-ragtag'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -129,10 +139,14 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " Automatic commands
 if has("autocmd")
-	" Enable file type detection
-	filetype on
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+    " Enable file type detection
+    filetype on
+    autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+    autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+
+    " Reload services
+    autocmd BufWritePost ~/.vimrc so ~/.vimrc
+    autocmd BufWritePost sxhkdrc !pkill sxhkd; sxhkd &
 endif
 
 set background=dark
@@ -219,6 +233,10 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 :nnoremap <leader>l :bnext<CR>
 " Close current buffer and move the previous
 :nnoremap <leader>q :bp <BAR> bd #<CR>
+
+" Setup closetag to recognize html templating languages
+"autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+"autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 " let g:UltiSnipsExpandTrigger="<TAB>"
 " let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
