@@ -21,11 +21,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
 if [ -f /usr/bin/mint-fortune ]; then /usr/bin/mint-fortune; fi
 command -v ssh-add >/dev/null 2>&1 && ssh-add -l >/dev/null || echo "No Agent Identities"
-source /usr/share/chruby/chruby.sh
-chruby ruby-2.4.1
-source /usr/share/chruby/auto.sh
-if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
-  source /usr/share/gem_home/gem_home.sh
-fi
+#source /usr/share/chruby/chruby.sh
+#chruby ruby-2.4.1
+#source /usr/share/chruby/auto.sh
+#if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
+#  source /usr/share/gem_home/gem_home.sh
+#fi
+export PATH=$HOME/.pyenv/shims:$PATH

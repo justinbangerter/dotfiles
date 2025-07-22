@@ -1,5 +1,5 @@
-xterm*font: -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
-xterm*font1: -*-*-*-*-*-*-2-*-*-*-*-*-*-*
+xterm*font: -*-dejavu sans mono-medium-r-*-*-17-*-*-*-*-*-iso10646-*
+xterm*font1: -*-*-*-*-*-*-18-*-*-*-*-*-*-*
 xterm*font2: -misc-fixed-*-r-normal-*-8-*-*-*-*-*-iso8859-*
 xterm*font3: -b&h-lucidatypewriter-bold-*-*-*-12-*-*-*-*-*-*-*
 xterm*font4: -*-screen-bold-r-normal-*-16-*-*-*-*-*-iso8859-*
@@ -89,4 +89,4 @@ UXTerm*Background: rgb:00/00/00
 
 //URxvt.font: -*-freemono-*-r-*-*-17-*-*-*-*-*-iso8859-8
 Rxvt.font:  -*-freemono-*-r-*-*-17-*-*-*-*-*-iso8859-8
-XTerm*font: -*-freemono-*-r-*-*-17-*-*-*-*-*-iso8859-8
+//XTerm*font: -*-freemono-*-r-*-*-17-*-*-*-*-*-iso8859-8

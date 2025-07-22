@@ -10,6 +10,8 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 fi;
 
 prompt_git() {
+# Disable this for now, because it's too slow.
+return;
 	local s='';
 	local branchName='';
 

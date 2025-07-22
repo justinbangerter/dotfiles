@@ -45,7 +45,11 @@ set pastetoggle=<F2>
 set clipboard=unnamedplus
 
 set wildmenu
-set esckeys
+
+if !has('nvim')
+    set esckeys
+endif
+
 set backspace=indent,eol,start
 set ttyfast
 set gdefault
@@ -233,6 +237,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 :nnoremap <leader>l :bnext<CR>
 " Close current buffer and move the previous
 :nnoremap <leader>q :bp <BAR> bd #<CR>
+" tells ctrlp to stop traversing up parent folders when it sees a .ctrlp file
+let g:ctrlp_root_markers = ['.ctrlp']
 
 " Setup closetag to recognize html templating languages
 "autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
@@ -265,3 +271,4 @@ let g:airline#extensions#tabline#fnamemod = ':t'
     " let g:neocomplete#force_omni_input_patterns = {}
 " endif
 " let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+" hi Normal guibg=NONE ctermbg=NONE
