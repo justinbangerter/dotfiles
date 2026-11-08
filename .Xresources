@@ -90,3 +90,5 @@ UXTerm*Background: rgb:00/00/00
 //URxvt.font: -*-freemono-*-r-*-*-17-*-*-*-*-*-iso8859-8
 Rxvt.font:  -*-freemono-*-r-*-*-17-*-*-*-*-*-iso8859-8
 //XTerm*font: -*-freemono-*-r-*-*-17-*-*-*-*-*-iso8859-8
+
+Xft.dpi: 144
